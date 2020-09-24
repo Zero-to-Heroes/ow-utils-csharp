@@ -1,0 +1,8 @@
+/OwUtils/bin
+/OwUtils/obj
+/OwUtilsTests/bin
+/OwUtilsTests/obj
+packages
+.vs
+/OwUtilsTests/OwUtilsTests.csproj.user
+/OwUtils/OwUtils.csproj.user

@@ -1,0 +1,14 @@
+G:\Source\zerotoheroes\ow-utils-csharp\OwUtils\obj\Debug\OwUtils.csprojAssemblyReference.cache
+G:\Source\zerotoheroes\ow-utils-csharp\OwUtils\bin\Debug\OwUtils.dll
+G:\Source\zerotoheroes\ow-utils-csharp\OwUtils\bin\Debug\OwUtils.pdb
+G:\Source\zerotoheroes\ow-utils-csharp\OwUtils\bin\Debug\Newtonsoft.Json.dll
+G:\Source\zerotoheroes\ow-utils-csharp\OwUtils\bin\Debug\UnitySpy.dll
+G:\Source\zerotoheroes\ow-utils-csharp\OwUtils\bin\Debug\UnitySpy.HearthstoneLib.dll
+G:\Source\zerotoheroes\ow-utils-csharp\OwUtils\bin\Debug\System.ValueTuple.dll
+G:\Source\zerotoheroes\ow-utils-csharp\OwUtils\bin\Debug\Newtonsoft.Json.xml
+G:\Source\zerotoheroes\ow-utils-csharp\OwUtils\bin\Debug\UnitySpy.pdb
+G:\Source\zerotoheroes\ow-utils-csharp\OwUtils\bin\Debug\UnitySpy.HearthstoneLib.pdb
+G:\Source\zerotoheroes\ow-utils-csharp\OwUtils\bin\Debug\System.ValueTuple.xml
+G:\Source\zerotoheroes\ow-utils-csharp\OwUtils\obj\Debug\OwUtils.csproj.CopyComplete
+G:\Source\zerotoheroes\ow-utils-csharp\OwUtils\obj\Debug\OwUtils.dll
+G:\Source\zerotoheroes\ow-utils-csharp\OwUtils\obj\Debug\OwUtils.pdb

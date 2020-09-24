@@ -1,0 +1,5 @@
+G:\Source\hs-game-converter-csharp-port\HearthstoneReplays\bin\Debug\HearthstoneReplays.dll
+G:\Source\hs-game-converter-csharp-port\HearthstoneReplays\bin\Debug\HearthstoneReplays.pdb
+G:\Source\hs-game-converter-csharp-port\HearthstoneReplays\obj\Debug\HearthstoneReplays.csprojResolveAssemblyReference.cache
+G:\Source\hs-game-converter-csharp-port\HearthstoneReplays\obj\Debug\HearthstoneReplays.dll
+G:\Source\hs-game-converter-csharp-port\HearthstoneReplays\obj\Debug\HearthstoneReplays.pdb

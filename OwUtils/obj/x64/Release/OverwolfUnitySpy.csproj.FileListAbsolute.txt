@@ -1,0 +1,14 @@
+G:\Source\zerotoheroes\overwolf-unityspy-plugin-2\HearthstoneReplays\bin\x64\Release\OverwolfUnitySpy.dll
+G:\Source\zerotoheroes\overwolf-unityspy-plugin-2\HearthstoneReplays\bin\x64\Release\OverwolfUnitySpy.pdb
+G:\Source\zerotoheroes\overwolf-unityspy-plugin-2\HearthstoneReplays\bin\x64\Release\Newtonsoft.Json.dll
+G:\Source\zerotoheroes\overwolf-unityspy-plugin-2\HearthstoneReplays\bin\x64\Release\Newtonsoft.Json.xml
+G:\Source\zerotoheroes\overwolf-unityspy-plugin-2\HearthstoneReplays\obj\x64\Release\OverwolfUnitySpy.csproj.CopyComplete
+G:\Source\zerotoheroes\overwolf-unityspy-plugin-2\HearthstoneReplays\obj\x64\Release\OverwolfUnitySpy.dll
+G:\Source\zerotoheroes\overwolf-unityspy-plugin-2\HearthstoneReplays\obj\x64\Release\OverwolfUnitySpy.pdb
+G:\Source\zerotoheroes\overwolf-unityspy-plugin-2\HearthstoneReplays\bin\x64\Release\UnitySpy.dll
+G:\Source\zerotoheroes\overwolf-unityspy-plugin-2\HearthstoneReplays\bin\x64\Release\UnitySpy.HearthstoneLib.dll
+G:\Source\zerotoheroes\overwolf-unityspy-plugin-2\HearthstoneReplays\bin\x64\Release\System.ValueTuple.dll
+G:\Source\zerotoheroes\overwolf-unityspy-plugin-2\HearthstoneReplays\bin\x64\Release\UnitySpy.pdb
+G:\Source\zerotoheroes\overwolf-unityspy-plugin-2\HearthstoneReplays\bin\x64\Release\UnitySpy.HearthstoneLib.pdb
+G:\Source\zerotoheroes\overwolf-unityspy-plugin-2\HearthstoneReplays\bin\x64\Release\System.ValueTuple.xml
+G:\Source\zerotoheroes\overwolf-unityspy-plugin-2\HearthstoneReplays\obj\x64\Release\OverwolfUnitySpy.csprojAssemblyReference.cache

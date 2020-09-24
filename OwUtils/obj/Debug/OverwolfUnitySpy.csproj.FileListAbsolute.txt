@@ -1,0 +1,8 @@
+G:\Source\zerotoheroes\overwolf-unityspy-plugin-2\HearthstoneReplays\obj\Debug\OverwolfUnitySpy.csprojAssemblyReference.cache
+G:\Source\zerotoheroes\overwolf-unityspy-plugin-2\HearthstoneReplays\bin\Debug\Newtonsoft.Json.dll
+G:\Source\zerotoheroes\overwolf-unityspy-plugin-2\HearthstoneReplays\bin\Debug\Newtonsoft.Json.xml
+G:\Source\zerotoheroes\overwolf-unityspy-plugin-2\HearthstoneReplays\obj\Debug\OverwolfUnitySpy.csproj.CopyComplete
+G:\Source\zerotoheroes\overwolf-unityspy-plugin-2\HearthstoneReplays\bin\Debug\OverwolfUnitySpy.dll
+G:\Source\zerotoheroes\overwolf-unityspy-plugin-2\HearthstoneReplays\bin\Debug\OverwolfUnitySpy.pdb
+G:\Source\zerotoheroes\overwolf-unityspy-plugin-2\HearthstoneReplays\obj\Debug\OverwolfUnitySpy.dll
+G:\Source\zerotoheroes\overwolf-unityspy-plugin-2\HearthstoneReplays\obj\Debug\OverwolfUnitySpy.pdb

@@ -1,0 +1,8 @@
+G:\Source\zerotoheroes\ow-utils-csharp\OwUtils\bin\Release\OwUtils.dll
+G:\Source\zerotoheroes\ow-utils-csharp\OwUtils\bin\Release\OwUtils.pdb
+G:\Source\zerotoheroes\ow-utils-csharp\OwUtils\bin\Release\Newtonsoft.Json.dll
+G:\Source\zerotoheroes\ow-utils-csharp\OwUtils\bin\Release\Newtonsoft.Json.xml
+G:\Source\zerotoheroes\ow-utils-csharp\OwUtils\obj\Release\OwUtils.csproj.CopyComplete
+G:\Source\zerotoheroes\ow-utils-csharp\OwUtils\obj\Release\OwUtils.dll
+G:\Source\zerotoheroes\ow-utils-csharp\OwUtils\obj\Release\OwUtils.pdb
+G:\Source\zerotoheroes\ow-utils-csharp\OwUtils\obj\Release\OwUtils.csprojAssemblyReference.cache

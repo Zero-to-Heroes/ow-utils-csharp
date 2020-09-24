@@ -1,0 +1,13 @@
+G:\Source\hs-game-converter-csharp-port\HearthstoneReplays\bin\x86\Release\HearthstoneReplays.dll
+G:\Source\hs-game-converter-csharp-port\HearthstoneReplays\bin\x86\Release\HearthstoneReplays.pdb
+G:\Source\hs-game-converter-csharp-port\HearthstoneReplays\obj\x86\Release\HearthstoneReplays.dll
+G:\Source\hs-game-converter-csharp-port\HearthstoneReplays\obj\x86\Release\HearthstoneReplays.pdb
+G:\Source\hs-game-converter-csharp-port\HearthstoneReplays\obj\x86\Release\HearthstoneReplays.csprojResolveAssemblyReference.cache
+G:\Source\zerotoheroes\hs-game-converter-csharp-port\HearthstoneReplays\bin\x86\Release\HearthstoneReplays.dll
+G:\Source\zerotoheroes\hs-game-converter-csharp-port\HearthstoneReplays\bin\x86\Release\HearthstoneReplays.pdb
+G:\Source\zerotoheroes\hs-game-converter-csharp-port\HearthstoneReplays\obj\x86\Release\HearthstoneReplays.dll
+G:\Source\zerotoheroes\hs-game-converter-csharp-port\HearthstoneReplays\obj\x86\Release\HearthstoneReplays.pdb
+G:\Source\zerotoheroes\hs-game-converter-csharp-port\HearthstoneReplays\bin\x86\Release\Newtonsoft.Json.dll
+G:\Source\zerotoheroes\hs-game-converter-csharp-port\HearthstoneReplays\bin\x86\Release\Newtonsoft.Json.xml
+G:\Source\zerotoheroes\hs-game-converter-csharp-port\HearthstoneReplays\obj\x86\Release\HearthstoneReplays.csproj.CopyComplete
+G:\Source\zerotoheroes\hs-game-converter-csharp-port\HearthstoneReplays\obj\x86\Release\HearthstoneReplays.csprojAssemblyReference.cache

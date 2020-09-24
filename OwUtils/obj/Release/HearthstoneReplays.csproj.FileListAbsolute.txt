@@ -1,0 +1,4 @@
+G:\Source\hs-game-converter-csharp-port\HearthstoneReplays\bin\Release\HearthstoneReplays.dll
+G:\Source\hs-game-converter-csharp-port\HearthstoneReplays\bin\Release\HearthstoneReplays.pdb
+G:\Source\hs-game-converter-csharp-port\HearthstoneReplays\obj\Release\HearthstoneReplays.dll
+G:\Source\hs-game-converter-csharp-port\HearthstoneReplays\obj\Release\HearthstoneReplays.pdb
