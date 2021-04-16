@@ -4,6 +4,7 @@ using System.Drawing;
 using HWND = System.IntPtr;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Forms;
 
 namespace OwUtils
 {
@@ -37,15 +38,15 @@ namespace OwUtils
 
         public static Image CaptureDesktop()
         {
-            return CaptureWindow(GetDesktopWindow());
+            return CaptureWindow(GetDesktopWindow(), false);
         }
 
-        public static Bitmap CaptureActiveWindow()
+        public static Bitmap CaptureActiveWindow(bool copyToClipBoard)
         {
-            return CaptureWindow(GetForegroundWindow());
+            return CaptureWindow(GetForegroundWindow(), copyToClipBoard);
         }
 
-        public static Bitmap CaptureWindow(string windowName)
+        public static Bitmap CaptureWindow(string windowName, bool copyToClipBoard)
         {
             foreach (KeyValuePair<IntPtr, string> window in ScreenCapture.GetOpenWindows())
             {
@@ -55,14 +56,14 @@ namespace OwUtils
                 Console.WriteLine("{0}: {1}", handle, title);
                 if (title.Equals(windowName))
                 {
-                    return CaptureWindow(handle);
+                    return CaptureWindow(handle, copyToClipBoard);
 
                 }
             }
             return null;
         }
 
-        public static Bitmap CaptureWindow(IntPtr handle)
+        public static Bitmap CaptureWindow(IntPtr handle, bool copyToClipBoard)
         {
             var rect = new Rect();
             GetWindowRect(handle, ref rect);
@@ -72,6 +73,11 @@ namespace OwUtils
             using (var graphics = Graphics.FromImage(result))
             {
                 graphics.CopyFromScreen(new Point(bounds.Left, bounds.Top), Point.Empty, bounds.Size);
+            }
+
+            if (copyToClipBoard)
+            {
+                Clipboard.SetImage(result);
             }
 
             return result;
