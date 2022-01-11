@@ -43,6 +43,21 @@ namespace OwUtils
             t.Join();
         }
 
+
+        public void flashWindow(string windowName, Action<object, object> callback)
+        {
+            Thread t = new Thread((ThreadStart)(() =>
+            {
+                Logger.Log = onGlobalEvent;
+                FlashWindow.Flash(windowName);
+                callback?.Invoke(null, null);
+            }));
+
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
+            t.Join();
+        }
+
         public string ImageToBase64String(System.Drawing.Image imageIn)
         {
             using (var ms = new MemoryStream())

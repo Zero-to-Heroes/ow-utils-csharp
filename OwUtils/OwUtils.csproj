@@ -111,6 +111,8 @@
     <Compile Include="Logger.cs" />
     <Compile Include="OwUtilsPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FlashWindow.cs" />
+    <Compile Include="WindowUtils.cs" />
     <Compile Include="ScreenCapture.cs" />
   </ItemGroup>
   <ItemGroup>

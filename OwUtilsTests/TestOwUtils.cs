@@ -8,9 +8,16 @@ namespace OwUtilsTests
     public class TestOwUtils
     {
         [TestMethod]
-        public void BasicTest()
+        public void TestCapture()
         {
-            new OwUtilsPlugin().captureWindow("Firestone - BattlegroundsWindow", "", null);
+            new OwUtilsPlugin().captureWindow("Firestone - BattlegroundsWindow", "", false, null);
+        }
+
+        [TestMethod]
+        public void TestFlash()
+        {
+            var openWindows = WindowUtils.GetOpenWindows();
+            new OwUtilsPlugin().flashWindow("Hearthstone", null);
         }
     }
 }
