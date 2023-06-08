@@ -90,6 +90,15 @@ namespace OwUtils
             });
         }
 
+        public void copyFile(string sourcePath, string targetDir, Action<object, object> callback)
+        {
+            Task.Run(() =>
+            {
+                File.Copy(sourcePath, Path.Combine(targetDir, Path.GetFileName(sourcePath)), true);
+                callback?.Invoke(null, null);
+            });
+        }
+
         public void downloadAndUnzipFile(string fileUrl, string installPath, Action<object, object> callback)
         {
             //callback?.Invoke(null, $"Starting to download {fileUrl} and install it to {installPath}");
