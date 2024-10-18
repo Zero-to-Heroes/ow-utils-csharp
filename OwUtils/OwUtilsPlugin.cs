@@ -8,6 +8,7 @@ using System.Net;
 using System.Net.Mime;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace OwUtils
 {
@@ -40,6 +41,27 @@ namespace OwUtils
                 image.Save(destination, ImageFormat.Jpeg);
                 //Logger.Log("Saved image", destination);
                 callback(destination, base64Image);
+            }));
+
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
+            t.Join();
+        }
+
+        public void copyImageDataUrlToClipboard(string dataUrl, Action<object, object> callback)
+        {
+
+            Thread t = new Thread((ThreadStart)(() =>
+            {
+                Logger.Log = onGlobalEvent;
+                var base64Data = dataUrl.Split(',')[1];
+                byte[] imageBytes = Convert.FromBase64String(base64Data);
+                using (var ms = new MemoryStream(imageBytes))
+                {
+                    Image image = Image.FromStream(ms);
+                    Clipboard.SetImage(image);
+                }
+                callback?.Invoke(null, null);
             }));
 
             t.SetApartmentState(ApartmentState.STA);
