@@ -1,0 +1,12 @@
+E:\Source\zerotoheroes\ow-utils-csharp\OwUtilsExe\bin\Debug\OwUtilsExe.exe.config
+E:\Source\zerotoheroes\ow-utils-csharp\OwUtilsExe\bin\Debug\OwUtilsExe.exe
+E:\Source\zerotoheroes\ow-utils-csharp\OwUtilsExe\bin\Debug\OwUtilsExe.pdb
+E:\Source\zerotoheroes\ow-utils-csharp\OwUtilsExe\bin\Debug\Newtonsoft.Json.dll
+E:\Source\zerotoheroes\ow-utils-csharp\OwUtilsExe\bin\Debug\OwUtils.pdb
+E:\Source\zerotoheroes\ow-utils-csharp\OwUtilsExe\bin\Debug\Newtonsoft.Json.xml
+E:\Source\zerotoheroes\ow-utils-csharp\OwUtilsExe\obj\Debug\OwUtilsExe.csproj.AssemblyReference.cache
+E:\Source\zerotoheroes\ow-utils-csharp\OwUtilsExe\obj\Debug\OwUtilsExe.csproj.CoreCompileInputs.cache
+E:\Source\zerotoheroes\ow-utils-csharp\OwUtilsExe\obj\Debug\OwUtilsExe.csproj.Up2Date
+E:\Source\zerotoheroes\ow-utils-csharp\OwUtilsExe\obj\Debug\OwUtilsExe.exe
+E:\Source\zerotoheroes\ow-utils-csharp\OwUtilsExe\obj\Debug\OwUtilsExe.pdb
+E:\Source\zerotoheroes\ow-utils-csharp\OwUtilsExe\bin\Debug\OwUtils.dll

@@ -1,11 +1,16 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.IO.Compression;
 using System.Net;
 using System.Net.Mime;
+using System.Reflection;
+using System.Security.AccessControl;
+using System.Security.Principal;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,6 +25,76 @@ namespace OwUtils
         //  ...
         // });
         public event Action<object, object> onGlobalEvent;
+
+        public void Init()
+        {
+            Logger.Log = (string1, string2) => onGlobalEvent(string1, string2);
+        }
+
+        public void getFileVersion(string filePath, Action<object> callback)
+        {
+            // Get the file version info
+            FileVersionInfo fileVersionInfo = FileVersionInfo.GetVersionInfo(filePath);
+
+            // Access the version information
+            string fileVersion = fileVersionInfo.FileVersion;
+            callback(fileVersion);
+        }
+
+        public void grantFullAccess(string dirPath, Action<object> callback)
+        {
+            string assemblyDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            string fileName = Path.Combine(assemblyDir, "OwUtilsExe.exe");
+            Logger.Log("[ow-utils] [plugin] granting full access", fileName);
+            var processInfo = new ProcessStartInfo
+            {
+                FileName = fileName,
+                Arguments = $"grantAccess \"{dirPath}\"",
+                UseShellExecute = true,
+                WorkingDirectory = assemblyDir,
+                //RedirectStandardOutput = true,
+                //RedirectStandardError = true,
+                //CreateNoWindow = true,
+                Verb = "runas" // This triggers the UAC prompt
+            };
+
+            try
+            {
+                using (Process process = Process.Start(processInfo))
+                {
+                    Logger.Log("[ow-utils] [plugin] started process", "");
+                    // Read standard output line by line
+                    while (!process.StandardOutput.EndOfStream)
+                    {
+                        Logger.Log("[ow-utils] [plugin] waiting for process", "");
+                        string line = process.StandardOutput.ReadLine();
+                        Logger.Log("[ow-utils] Received line from exe", line);
+                        if (line.StartsWith("RESULT:"))
+                        {
+                            // Parse the result message
+                            string[] parts = line.Substring(7).Split('|'); // Remove "RESULT:" and split
+                            if (parts.Length == 1)
+                            {
+                                callback(parts[0]);
+                            }
+                        }
+                        else if (line.StartsWith("ERROR:"))
+                        {
+                            // Capture errors
+                            callback(line.Substring(6)); // Remove "ERROR:"
+                        }
+                    }
+
+                    Logger.Log("[ow-utils] [plugin] waiting for exit", "");
+                    process.WaitForExit();
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Log("[ow-utils] [plugin] got exception", ex.Message);
+                callback($"Failed to start process: {ex.Message}");
+            }
+        }
 
         public void captureWindow(string windowName, string destinationFolder, bool copyToClipBoard, Action<object, object> callback)
         {
@@ -114,10 +189,100 @@ namespace OwUtils
 
         public void copyFile(string sourcePath, string targetDir, Action<object, object> callback)
         {
+            Logger.Log("Starting file copy", $"{sourcePath}, {targetDir}");
             Task.Run(() =>
             {
+                try
+                {
+                    Logger.Log("Starting file copy in task", "");
+                    File.Copy(sourcePath, Path.Combine(targetDir, Path.GetFileName(sourcePath)), true);
+                    Logger.Log("After file copy", "");
+                    callback?.Invoke(null, null);
+                }
+                catch (Exception e)
+                {
+                    Logger.Log($"Got error: ${e.Message}", "");
+                    callback?.Invoke(e.Message, e.StackTrace);
+                }
+            });
+        }
+
+        public string CopyFileSync(string sourcePath, string targetDir)
+        {
+            try
+            {
                 File.Copy(sourcePath, Path.Combine(targetDir, Path.GetFileName(sourcePath)), true);
-                callback?.Invoke(null, null);
+                return "success";
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Got error: ${e.Message}");
+                return e.Message;
+            }
+        }
+
+        public string GrantAccessSync(string path)
+        {
+            try
+            {
+                DirectorySecurity sec = Directory.GetAccessControl(path);
+                SecurityIdentifier everyone = new SecurityIdentifier(WellKnownSidType.WorldSid, null);
+                sec.AddAccessRule(new FileSystemAccessRule(
+                    everyone, 
+                    FileSystemRights.Modify | FileSystemRights.Synchronize, 
+                    InheritanceFlags.ContainerInherit | InheritanceFlags.ObjectInherit, 
+                    PropagationFlags.None, 
+                    AccessControlType.Allow));
+                Directory.SetAccessControl(path, sec);
+                return "success";
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Got error: ${e.Message}");
+                return e.Message;
+            }
+        }
+
+        public void ListFilesInDirectory(string sourcePath, Action<object> callback)
+        {
+            Task.Run(() =>
+            {
+                try
+                {
+                    var result = new List<dynamic>();
+
+                    // List files
+                    foreach (string file in Directory.GetFiles(sourcePath, "*.*"))
+                    {
+                        FileInfo fileInfo = new FileInfo(file);
+                        var fileResult = new
+                        {
+                            Name = fileInfo.Name,
+                            LastModified = fileInfo.LastWriteTime.ToString("o"),
+                            Type = "file"
+                        };
+                        result.Add(fileResult);
+                    }
+
+                    // List directories
+                    foreach (string directory in Directory.GetDirectories(sourcePath, "*"))
+                    {
+                        DirectoryInfo dirInfo = new DirectoryInfo(directory);
+                        var dirResult = new
+                        {
+                            Name = dirInfo.Name,
+                            LastModified = dirInfo.LastWriteTime.ToString("o"),
+                            Type = "directory"
+                        };
+                        result.Add(dirResult);
+                    }
+
+                    callback?.Invoke(JsonConvert.SerializeObject(result));
+                }
+                catch (Exception ex)
+                {
+                    Logger.Log($"An error occurred: {ex.Message}", "");
+                }
             });
         }
 
